@@ -37,7 +37,7 @@
     ],
     "ios": {
       "requireFullScreen": true,
-      "bundleIdentifier": "package.test",
+      "bundleIdentifier": "packg.test",
       "infoPlist": {
         "CFBundleAllowMixedLocalizations": true,
         "LSApplicationQueriesSchemes": [
@@ -53,7 +53,7 @@
     },
     "android": {
       "versionCode": 1,
-      "package": "package.test",
+      "package": "packg.test",
       "useNextNotificationsApi": true,
       "adaptiveIcon": {
         "foregroundImage": "./assets/icon.png",
