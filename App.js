@@ -1,21 +1,56 @@
-import { StatusBar } from 'expo-status-bar';
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import React, {Component} from "react";
+import {KeyboardAvoidingView, Platform, SafeAreaView, StatusBar, Text, View} from "react-native";
+import AppLoading from 'expo-app-loading';
+import {Root} from "native-base";
+import {Provider} from "unstated";
 
-export default function App() {
-  return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
-  );
+export default class App extends Component {
+
+  state = {isReady: false};
+
+  async componentDidMount() {
+    try {
+      // removed code
+
+    } catch (e) {
+      console.error(e);
+    } finally {
+      this.setState({isReady: true});
+    }
+
+  }
+
+  render() {
+    if (!this.state.isReady) {
+      return (
+        <AppLoading/>
+      );
+    }
+    return (
+      <SafeAreaView style={{flex: 1, backgroundColor: "#eaeaea"}}>
+        <KeyboardAvoidingView behavior={Platform.OS === "ios" ? "padding" : "height"}
+                              style={{flex: 1, backgroundColor: "#eaeaea"}}>
+          <StatusBar
+            backgroundColor="rgba(0, 0, 0, 0.20)"
+            barStyle="light-content"
+            translucent
+            animated
+          />
+          <Provider>
+            <Root>
+              <View style={{backgroundColor: "#343434", flex: 1,
+                alignItems: "center",
+                justifyContent: "center"
+              }}>
+                <Text style={{color: "#FFFFFF"}}>
+                  {"App is running..."}
+                </Text>
+              </View>
+            </Root>
+          </Provider>
+        </KeyboardAvoidingView>
+      </SafeAreaView>
+    );
+  }
+
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});

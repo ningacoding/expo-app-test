@@ -1,0 +1,24 @@
+{
+  "build": {
+    "release": {
+      "android": {
+        "releaseChannel": "prod-2100",
+        "buildType": "app-bundle"
+      },
+      "ios": {
+        "releaseChannel": "prod-2100",
+        "autoIncrement": "buildNumber"
+      }
+    },
+    "apk": {
+      "android": {
+        "releaseChannel": "prod-2100",
+        "buildType": "apk"
+      }
+    },
+    "development": {
+      "developmentClient": true,
+      "distribution": "internal"
+    }
+  }
+}

@@ -1,32 +1,66 @@
 {
   "expo": {
-    "name": "my-app",
-    "slug": "my-app",
+    "name": "MyApp",
     "version": "1.0.0",
+    "slug": "my-app",
+    "privacy": "public",
+    "scheme": "my-app",
+    "platforms": [
+      "ios",
+      "android"
+    ],
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "splash": {
       "image": "./assets/splash.png",
       "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
+      "backgroundColor": "#0667D0"
     },
     "updates": {
       "fallbackToCacheTimeout": 0
+    },
+    "packagerOpts": {
+      "config": "metro.config.js",
+      "sourceExts": [
+        "js",
+        "jsx",
+        "svg",
+        "svgx"
+      ]
+    },
+    "notification": {
+      "icon": "./assets/icon.png",
+      "color": "#FFFFFF"
     },
     "assetBundlePatterns": [
       "**/*"
     ],
     "ios": {
-      "supportsTablet": true
+      "requireFullScreen": true,
+      "bundleIdentifier": "package.test",
+      "infoPlist": {
+        "CFBundleAllowMixedLocalizations": true,
+        "LSApplicationQueriesSchemes": [
+          "my-app"
+        ],
+        "NSCameraUsageDescription": "This app uses the camera to upload photos of products you want to buy or sell.",
+        "NSPhotoLibraryAddUsageDescription": "This app uses the photo library to access photos of products you want to buy or sell.",
+        "NSPhotoLibraryUsageDescription": "This app uses the photo library to access photos of products you want to publish."
+      },
+      "supportsTablet": true,
+      "icon": "./assets/icon.png",
+      "buildNumber": "1"
     },
     "android": {
+      "versionCode": 1,
+      "package": "package.test",
+      "useNextNotificationsApi": true,
       "adaptiveIcon": {
-        "foregroundImage": "./assets/adaptive-icon.png",
-        "backgroundColor": "#FFFFFF"
+        "foregroundImage": "./assets/icon.png",
+        "backgroundImage": "./assets/icon.png",
+        "backgroundColor": "#0667d0"
       }
     },
-    "web": {
-      "favicon": "./assets/favicon.png"
-    }
+    "description": "",
   }
 }
